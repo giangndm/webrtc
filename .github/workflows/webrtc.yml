@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: cargo build --verbose --target ${{ matrix.target }}
       - name: Run tests
-        run: cargo test --verbose --target ${{ matrix.target }} --all
+        run: cargo test --lib --target ${{ matrix.target }}
 
   rustfmt_and_clippy:
     name: Check rustfmt style && run clippy
