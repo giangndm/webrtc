@@ -19,6 +19,8 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v2
+      - name: Init-Cargo
+        run: rustup target add ${{ matrix.target }}
       - name: Build
         run: cargo build --verbose --target ${{ matrix.target }}
       - name: Run tests
